@@ -26,6 +26,7 @@ string[] array2 = new string[4] {"1234", "1567", "-2", "computer science"};
 string[] array3 = new string[3] {"Russia", "Denmark", "Kazan"};
 
 
-Console.WriteLine(FilterArray(array1));
-Console.WriteLine(FilterArray(array2));
-Console.WriteLine(FilterArray(array3));
+FilterArray(array1);
+FilterArray(array2);
+FilterArray(array3);
+//Console.WriteLine(FilterArray(array3));
