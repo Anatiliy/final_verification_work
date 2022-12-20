@@ -6,12 +6,12 @@
 //[“Russia”, “Denmark”, “Kazan”] → []
 
 
-string[] FilterArray(string[] array1, string[] array2)
+string[] FilterArray(string[] array1, string[] array2, int requiredlength = 3)
 {
     int index2 = 0;
     for (int index1 = 0; index1 < array1.Length; index1++)
     {
-        if (array1[index1].Length <= 3)
+        if (array1[index1].Length <= requiredlength)
         {
             Array.Resize(ref array2, index2 + 1);
             array2[index2] = array1[index1];
