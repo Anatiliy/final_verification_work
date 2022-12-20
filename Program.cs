@@ -6,12 +6,29 @@
 //[“Russia”, “Denmark”, “Kazan”] → []
 
 
-void FilterArray(string[] array1, int index = 0)
+string[] FilterArray(string[] array1, string[] array2)
+{
+    int index2 = 0;
+    for (int index1 = 0; index1 < array1.Length; index1++)
+    {
+        if (array1[index1].Length <= 3)
+        {
+            Array.Resize(ref array2, index2 + 1);
+            array2[index2] = array1[index1];
+            index2 = index2 + 1;
+        }
+          
+    }
+    return array2;
+}
+
+
+void PrintArray(string[] array1, int index = 0)
 {
     if (index < array1.Length)
     {
         Console.WriteLine(array1[index]);
-        FilterArray(array1, index + 1);
+        PrintArray(array1, index + 1);
     }
     else
     {
@@ -24,9 +41,9 @@ void FilterArray(string[] array1, int index = 0)
 string[] array1 = new string[4] {"Hello", "2", "world", ":-)"};
 string[] array2 = new string[4] {"1234", "1567", "-2", "computer science"};
 string[] array3 = new string[3] {"Russia", "Denmark", "Kazan"};
+string[] resultarray = new string[0];
 
 
-FilterArray(array1);
-FilterArray(array2);
-FilterArray(array3);
-//Console.WriteLine(FilterArray(array3));
+PrintArray(FilterArray(array1, resultarray));
+PrintArray(FilterArray(array2, resultarray));
+PrintArray(FilterArray(array3, resultarray));
